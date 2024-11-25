@@ -1,4 +1,4 @@
-# **Custom Libft - My Personal C Library**
+# **My Personal C Library Libft by ozamora- AKA oliverkingz**
 
 ## **Overview**
 This repository contains my personal version of `Libft`, originally based on the 42 curriculum's Libft project. Over time, I have extended and modified it, freeing it from the original project's constraints. It now features additional functions, reorganized folders, and an improved Makefile for better usability and clarity.
@@ -80,7 +80,7 @@ This repository contains my personal version of `Libft`, originally based on the
 | [ft_putstr_fd](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putstr_fd.c) | Writes a string to a file descriptor             |
 | **Extra**                      | **Description**                                   |
 | [ft_printf](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_printf.c) | Prints a formatted message                       |
-| [ft_putchar](https://github.com/oliverkingz/Libft_OZ/blob/main/src/io/ft_putchar.c) | Writes a character to the standard output        |
+| [ft_putchar](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putchar.c) | Writes a character to the standard output        |
 | [ft_putptr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putptr.c) | Writes a pointer address to a file descriptor    |
 | [ft_putstr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putstr.c) | Writes a string to the standard output           |
 | [ft_putnbr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putnbr.c) | Writes a number to the standard output           |
@@ -102,7 +102,7 @@ This repository contains my personal version of `Libft`, originally based on the
 | [ft_lstiter](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstiter.c) | Iterates over the list and applies a function    |
 | [ft_lstmap](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstmap.c) | Applies a function to each node and creates a new list |
 
-### **Enhancements**
+## **Enhancements**
 - **Refined Folder Structure**: Reorganized for a clearer and more modular layout.
 - **Improved Makefile**: A polished Makefile that simplifies compilation and provides better options.
 
