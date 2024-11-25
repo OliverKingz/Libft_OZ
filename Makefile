@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2024/11/25 18:54:43 by ozamora-         ###   ########.fr        #
+#    Updated: 2024/11/25 22:48:11 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,10 +95,10 @@ all: $(NAME)
 # Rule to create the static library
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
-	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)\t[ozamora-'s Libft]: " \
+	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)\t[ozamora-'s Libft]:\t" \
 		"$(DEF_COLOR)$(BOLD_GREEN)CREATED$(DEF_COLOR)\n"
-	# @$(MKDIR) $(LIB_DIR) 
-	# @$(CP) $(NAME) $(INCLUDES) $(LIB_DIR)
+	@$(MKDIR) $(LIB_DIR) 
+	@$(CP) $(NAME) $(INCLUDES) $(LIB_DIR)
 
 # Rule to compile object files from source files
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
@@ -109,15 +109,17 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 # Rule to clean generated files
 clean:
 	@$(RM) $(OBJ_DIR)
-	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)\t[ozamora-'s Libft]: " \
+	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)\t[ozamora-'s Libft]:\t" \
 		"$(DEF_COLOR)$(BOLD_RED)OBJECTS CLEANED$(DEF_COLOR)\n"
 
 # Rule to clean generated files and the executablle
-fclean: clean
+fclean:
+	@make clean > /dev/null
 	@$(RM) $(NAME)
 	@$(RM) $(LIB_DIR)
-	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)\t[ozamora-'s Libft]: " \
+	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)\t[ozamora-'s Libft]:\t" \
 		"$(DEF_COLOR)$(BOLD_RED)FULLY CLEANED$(DEF_COLOR)\n"
+
 
 # Rule to recompile from zero. 
 re: fclean all

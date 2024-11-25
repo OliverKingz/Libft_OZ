@@ -1,4 +1,4 @@
-# **My Personal C Library Libft by ozamora- AKA oliverkingz**
+# **My Personal C Library Libft by ozamora-/oliverkingz**
 
 ## **Overview**
 This repository contains my personal version of `Libft`, originally based on the 42 curriculum's Libft project. Over time, I have extended and modified it, freeing it from the original project's constraints. It now features additional functions, reorganized folders, and an improved Makefile for better usability and clarity.
