@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2024/11/24 22:43:19 by ozamora-         ###   ########.fr        #
+#    Updated: 2024/11/25 18:54:43 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,8 +97,8 @@ $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)\t[ozamora-'s Libft]: " \
 		"$(DEF_COLOR)$(BOLD_GREEN)CREATED$(DEF_COLOR)\n"
-#	@$(MKDIR) $(LIB_DIR) 
-#	@$(CP) $(NAME) $(INCLUDES) $(LIB_DIR)
+	# @$(MKDIR) $(LIB_DIR) 
+	# @$(CP) $(NAME) $(INCLUDES) $(LIB_DIR)
 
 # Rule to compile object files from source files
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
