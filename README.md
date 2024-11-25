@@ -46,8 +46,3 @@ This repository contains my personal version of `Libft`, originally based on the
 3. Don't forget to include it in your C files
    ```C
    #include "libft.h"
-
-## **Features**
-
-
-## **Skills Learned**
