@@ -60,41 +60,47 @@ This repository contains my personal version of `Libft`, originally based on the
 
 | **Function**                   | **Description**                                   |
 | ------------------------------ | ------------------------------------------------- |
-| [ft_bzero]                    | Sets a block of memory to zero                   |
-| [ft_calloc]                   | Allocates memory and initializes it to zero      |
-| [ft_memchr]                   | Searches for a character in a memory block       |
-| [ft_memcmp]                   | Compares memory blocks                            |
-| [ft_memcpy]                   | Copies a memory block                             |
-| [ft_memmove]                  | Moves a memory block                              |
-| [ft_memset]                   | Sets a value in a memory block                   |
+| [ft_bzero](https://github.com/oliverkingz/Libft_OZ/blob/main/src/mem/ft_bzero.c) | Sets a block of memory to zero                   |
+| [ft_calloc](https://github.com/oliverkingz/Libft_OZ/blob/main/src/mem/ft_calloc.c) | Allocates memory and initializes it to zero      |
+| [ft_memchr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/mem/ft_memchr.c) | Searches for a character in a memory block       |
+| [ft_memcmp](https://github.com/oliverkingz/Libft_OZ/blob/main/src/mem/ft_memcmp.c) | Compares memory blocks                            |
+| [ft_memcpy](https://github.com/oliverkingz/Libft_OZ/blob/main/src/mem/ft_memcpy.c) | Copies a memory block                             |
+| [ft_memmove](https://github.com/oliverkingz/Libft_OZ/blob/main/src/mem/ft_memmove.c) | Moves a memory block                              |
+| [ft_memset](https://github.com/oliverkingz/Libft_OZ/blob/main/src/mem/ft_memset.c) | Sets a value in a memory block                   |
 
-### **File I/O**
+### **Input/Output Functions**
 - Write to file descriptors using utilities like `ft_putstr_fd`, `ft_putnbr_fd`.
 - Additional output functions from a custom printf implementation: `ft_printf`, `ft_putptr`, `ft_putnbr_base`.
 
 | **Function**                   | **Description**                                   |
 | ------------------------------ | ------------------------------------------------- |
-| [ft_putchar_fd]               | Writes a character to a file descriptor          |
-| [ft_putendl_fd]               | Writes a line to a file descriptor               |
-| [ft_putnbr_fd]                | Writes a number to a file descriptor             |
-| [ft_putstr_fd]                | Writes a string to a file descriptor             |
+| [ft_putchar_fd](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putchar_fd.c) | Writes a character to a file descriptor          |
+| [ft_putendl_fd](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putendl_fd.c) | Writes a line to a file descriptor               |
+| [ft_putnbr_fd](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putnbr_fd.c) | Writes a number to a file descriptor             |
+| [ft_putstr_fd](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putstr_fd.c) | Writes a string to a file descriptor             |
 | **Extra**                      | **Description**                                   |
-| [ft_printf]                   | Prints a formatted message                       |
+| [ft_printf](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_printf.c) | Prints a formatted message                       |
+| [ft_putchar](https://github.com/oliverkingz/Libft_OZ/blob/main/src/io/ft_putchar.c) | Writes a character to the standard output        |
+| [ft_putptr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putptr.c) | Writes a pointer address to a file descriptor    |
+| [ft_putstr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putstr.c) | Writes a string to the standard output           |
+| [ft_putnbr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putnbr.c) | Writes a number to the standard output           |
+| [ft_putnbr_unsigned](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putnbr_unsigned.c) | Writes an unsigned number to the standard output |
+| [ft_putnbr_base](https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putnbr_base.c) | Writes a number in a specified base to a file descriptor |
 
 ### **Linked List Operations**
 - Manage linked lists easily with node creation, addition, iteration, and mapping (`ft_lstnew`, `ft_lstadd_back`, `ft_lstmap`).
 
 | **Function**                   | **Description**                                   |
 | ------------------------------ | ------------------------------------------------- |
-| [ft_lstnew]             | Creates a new list node                          |
-| [ft_lstadd_front]       | Adds a node to the front of the list             |
-| [ft_lstsize]            | Calculates the size of a list                    |
-| [ft_lstlast]            | Gets the last node of the list                   |
-| [ft_lstadd_back]        | Adds a node to the end of the list               |
-| [ft_lstdelone]          | Deletes a node from the list                     |
-| [ft_lstclear]           | Deletes all nodes from the list                  |
-| [ft_lstiter]            | Iterates over a list                             |
-| [ft_lstmap]             | Applies a function to each element of the list   |
+| [ft_lstnew](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstnew.c) | Creates a new list node                          |
+| [ft_lstadd_front](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstadd_front.c) | Adds a node to the front of the list             |
+| [ft_lstsize](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstsize.c) | Returns the size of the list                     |
+| [ft_lstlast](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstlast.c) | Returns the last node of the list                |
+| [ft_lstadd_back](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstadd_back.c) | Adds a node to the end of the list               |
+| [ft_lstdelone](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstdelone.c) | Deletes a single node                            |
+| [ft_lstclear](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstclear.c) | Deletes and frees the list                       |
+| [ft_lstiter](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstiter.c) | Iterates over the list and applies a function    |
+| [ft_lstmap](https://github.com/oliverkingz/Libft_OZ/blob/main/src/lst/ft_lstmap.c) | Applies a function to each node and creates a new list |
 
 ### **Enhancements**
 - **Refined Folder Structure**: Reorganized for a clearer and more modular layout.
