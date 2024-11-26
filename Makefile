@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2024/11/25 22:49:22 by ozamora-         ###   ########.fr        #
+#    Updated: 2024/11/26 14:44:04 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@ NAME := libft.a
 
 # **************************************************************************** #
 # COMMANDS
-CC := cc
-CFLAGS := -Wall -Wextra -Werror 
-CFLAGS += -g3 -fsanitize=address
-CFLAGS += -MMD -MP
+CC		:= cc
+CFLAGS	:= -Wall -Wextra -Werror 
+CFLAGS	+= -g3 -fsanitize=address
+CFLAGS	+= -MMD -MP
 
 AR		:= ar rcs
 MKDIR	:= mkdir -p
@@ -27,10 +27,10 @@ PRINTF	:= printf "%b"
 
 # **************************************************************************** #
 # DIRECTORIES
-SRC_DIR = src/
-INC_DIR = inc/
-OBJ_DIR = obj/
-LIB_DIR = ../lib/
+SRC_DIR := src/
+INC_DIR := inc/
+OBJ_DIR := obj/
+LIB_DIR := ../lib/
 
 # SOURCE SUBDIRECTORIES
 IS_DIR  := is/
@@ -59,7 +59,7 @@ STR_FILES :=	ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr \
 				ft_strtrim ft_split ft_strmapi ft_striteri
 TO_FILES  :=	ft_toupper ft_tolower ft_itoa ft_atoi
 
-SRC_FILES += $(addprefix $(IS_DIR), $(IS_FILES))
+SRC_FILES := $(addprefix $(IS_DIR), $(IS_FILES))
 SRC_FILES += $(addprefix $(LST_DIR), $(LST_FILES))
 SRC_FILES += $(addprefix $(MEM_DIR), $(MEM_FILES))
 SRC_FILES += $(addprefix $(PUT_DIR), $(PUT_FILES))
@@ -97,8 +97,8 @@ $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)\t[ozamora-'s Libft]:\t" \
 		"$(DEF_COLOR)$(BOLD_GREEN)CREATED$(DEF_COLOR)\n"
-	@$(MKDIR) $(LIB_DIR) 
-	@$(CP) $(NAME) $(INCLUDES) $(LIB_DIR)
+#	@$(MKDIR) $(LIB_DIR) 
+#	@$(CP) $(NAME) $(LIB_DIR)
 
 # Rule to compile object files from source files
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
