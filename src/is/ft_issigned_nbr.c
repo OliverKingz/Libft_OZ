@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_issigned_nbr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 18:22:01 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/27 17:31:07 by ozamora-         ###   ########.fr       */
+/*   Created: 2024/11/27 17:17:19 by ozamora-          #+#    #+#             */
+/*   Updated: 2024/11/27 17:44:19 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief Checks if a character is a digit (0-9).
- * @c: The character to check.
- * @return 1 if 'c' is a digit, 0 otherwise.
+ * @brief Checks if the given string is a signed number.
+ * @param str The string to check
+ * @return 
+ * - 1 if the string is a signed number.
+ * 
+ * - 0 if the string is NOT a signed number
  */
-int	ft_isdigit(int c)
+int	ft_issigned_nbr(const char *str)
 {
-	return (c >= '0' && c <= '9');
+	if (*str == '+' || *str == '-')
+		str++;
+	if (*str == '\0')
+		return (0);
+	while (*str)
+	{
+		if (!ft_isdigit(*str))
+			return (0);
+		str++;
+	}
+	return (1);
 }

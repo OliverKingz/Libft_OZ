@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2024/11/26 14:44:04 by ozamora-         ###   ########.fr        #
+#    Updated: 2024/11/27 17:40:47 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,8 @@ TO_DIR  := to/
 
 # SOURCE FILES
 IS_FILES  :=	ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint \
-				ft_islower ft_isupper ft_isspace
+				ft_islower ft_isupper ft_isspace ft_isdigit_sign_or_space \
+				ft_issigned_nbr
 LST_FILES :=	ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast \
 				ft_lstadd_back ft_lstdelone ft_lstclear \
 				ft_lstiter ft_lstmap
