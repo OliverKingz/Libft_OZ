@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:28:46 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/27 17:46:01 by ozamora-         ###   ########.fr       */
+/*   Updated: 2024/11/27 17:52:03 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_list
  * - ft_islower: Checks if the character is lowercase letter.
  * - ft_isupper: Checks if the character is uppercase letter.
  * - ft_isspace: Checks if the character is whitespace.
- * - ft_issigned_nbr: Checks if the string is a numbered 
+ * - ft_issigned_nbr: Checks if the string is a signed number 
  * - ft_isdigit_sign_or_space: Checks if the char is a sign, number or space
  */
 

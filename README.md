@@ -31,8 +31,8 @@ This repository contains my personal version of `Libft`, originally based on the
 | [ft_islower](https://github.com/oliverkingz/Libft_OZ/blob/main/src/is/ft_islower.c) | Checks if the character is a lowercase letter    |
 | [ft_isupper](https://github.com/oliverkingz/Libft_OZ/blob/main/src/is/ft_isupper.c) | Checks if the character is an uppercase letter   |
 | [ft_isspace](https://github.com/oliverkingz/Libft_OZ/blob/main/src/is/ft_isspace.c) | Checks if the character is a whitespace          |
-| [ft_issigned_nbr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/is/ft_issigned_nbr.c) | Checks if the string is a numbered     |
-| [ft_isdigit_sign_or_space](https://github.com/oliverkingz/Libft_OZ/blob/main/src/is/ft_isdigit_sign_or_space.c) | Checks if the char is a sign, number or space |
+| [ft_isdigit_sign_or_space](https://github.com/oliverkingz/Libft_OZ/blob/main/src/is/ft_isdigit_sign_or_space.c) | Checks if the character is a sign, number or space |
+| [ft_issigned_nbr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/is/ft_issigned_nbr.c) | Checks if the string is a signed number |
 
 ### **String Functions**
 - Core functions for handling strings: copying, joining, trimming, and splitting (`ft_strlen`, `ft_strjoin`, `ft_split`).
