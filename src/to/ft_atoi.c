@@ -6,29 +6,30 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 18:55:57 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/22 15:18:25 by ozamora-         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:38:45 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * ft_atoi - Converts a string to an integer.
- * 
- * @nptr: The string to convert.
- * 
- * Return: The converted integer.
- * 
- * Edge cases checked:
+ * @brief Converts a string to an integer.
+ * @param nptr: The string to convert.
+ * @return The converted integer.
+ * @note
  * - Handles leading whitespace characters (space, newline, tab, vertical tab,
  * form feed, carriage return).
+ * 
  * - Supports '+' and '-' signs.
+ * 
  * - Stops conversion on the first non-numeric character.
+ * 
  * - Does not handle integer overflow or underflow.
  * 
- * Note: For applications requiring detection of overflow/underflow or
- *       conversion of strings beyond the range of int, consider using strtol.
- *       Look at man strtol for full atoi instructions
+ * - For applications requiring detection of overflow/underflow or
+ *   conversion of strings beyond the range of int, consider using strtol.
+ * 
+ * - Look at man strtol for full atoi instructions
  */
 int	ft_atoi(const char *nptr)
 {

@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:28:46 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/27 17:52:03 by ozamora-         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:41:43 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ int		ft_issigned_nbr(const char *str);
  * - ft_toupper: Converts a character to uppercase.
  * - ft_atoi: Converts a string to an integer.
  * - ft_itoa: Converts an integer to a string.
+ * Added later:
+ * - ft_atol: 
+ * Planned to add:
+ * - ft_strtol: 
  */
 
 int		ft_tolower(int c);

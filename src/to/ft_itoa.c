@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:11:48 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/22 15:20:17 by ozamora-         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:38:27 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,18 @@ static void	fill_positive_string(char *a, unsigned int n_unsigned, int digits)
 }
 
 /**
- * ft_itoa - Converts an integer to a string.
+ * @brief Converts an integer to a string.
+ * @n  The integer to be converted.
+ * @return 
+ * - A pointer to the string representing the integer 'n'.
  * 
- * @n:  The integer to be converted.
- * 
- * Return: A pointer to the string representing the integer 'n'. 
- *         The string is dynamically allocated and should be freed by the caller
- *         Returns NULL if memory allocation fails
- * 
- * Notes:
+ * - Returns NULL if memory allocation fails
+ * @warning
+ * The string is dynamically allocated and should be freed by the caller
+ * @note
  * - The function handles conversion of any integer value, including negative 
  * numbers and zero.
+ * 
  * - The resulting string includes a minus sign '-' if the number is negative.
  */
 char	*ft_itoa(int n)
