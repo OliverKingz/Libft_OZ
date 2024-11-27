@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2024/11/27 17:40:47 by ozamora-         ###   ########.fr        #
+#    Updated: 2024/11/27 19:29:20 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,8 +48,7 @@ IS_FILES  :=	ft_isalnum ft_isalpha ft_isascii ft_isdigit ft_isprint \
 				ft_islower ft_isupper ft_isspace ft_isdigit_sign_or_space \
 				ft_issigned_nbr
 LST_FILES :=	ft_lstnew ft_lstadd_front ft_lstsize ft_lstlast \
-				ft_lstadd_back ft_lstdelone ft_lstclear \
-				ft_lstiter ft_lstmap
+				ft_lstadd_back ft_lstdelone ft_lstclear ft_lstiter ft_lstmap
 MEM_FILES :=	ft_memset ft_memcpy ft_memmove ft_memchr ft_memcmp \
 				ft_calloc ft_bzero
 PUT_FILES :=	ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
@@ -58,7 +57,8 @@ PUT_FILES :=	ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 STR_FILES :=	ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr \
 				ft_strncmp ft_strnstr ft_strdup ft_substr ft_strjoin \
 				ft_strtrim ft_split ft_strmapi ft_striteri
-TO_FILES  :=	ft_toupper ft_tolower ft_itoa ft_atoi
+TO_FILES  :=	ft_toupper ft_tolower ft_itoa ft_atoi \
+				ft_atol
 
 SRC_FILES := $(addprefix $(IS_DIR), $(IS_FILES))
 SRC_FILES += $(addprefix $(LST_DIR), $(LST_FILES))

@@ -16,7 +16,7 @@ This repository contains my personal version of `Libft`, originally based on the
    #include "libft.h"
 
 ## **Features**
-### **Character Check Functions**
+### **Check Functions**
 - Utilities to evaluate characters based on type (`ft_isalpha`, `ft_isdigit`, etc.).
 - Extended support with added functions like `ft_islower`, `ft_isupper`, and `ft_isspace`.
 
@@ -33,6 +33,19 @@ This repository contains my personal version of `Libft`, originally based on the
 | [ft_isspace](https://github.com/oliverkingz/Libft_OZ/blob/main/src/is/ft_isspace.c) | Checks if the character is a whitespace          |
 | [ft_isdigit_sign_or_space](https://github.com/oliverkingz/Libft_OZ/blob/main/src/is/ft_isdigit_sign_or_space.c) | Checks if the character is a sign, number or space |
 | [ft_issigned_nbr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/is/ft_issigned_nbr.c) | Checks if the string is a signed number |
+
+### **Conversion Functions**
+- Functions to convert strings to various data types: `ft_atoi`, `ft_atol`, `ft_itoa`.
+- Functions to convert characters to different cases: `ft_tolower`, `ft_toupper`.
+
+| **Function**                   | **Description**                                   |
+| ------------------------------ | ------------------------------------------------- |
+| [ft_atoi](https://github.com/oliverkingz/Libft_OZ/blob/main/src/to/ft_atoi.c) | Converts a string to an integer                  |
+| [ft_itoa](https://github.com/oliverkingz/Libft_OZ/blob/main/src/to/ft_itoa.c) | Converts an integer to a string                  |
+| [ft_tolower](https://github.com/oliverkingz/Libft_OZ/blob/main/src/to/ft_tolower.c) | Converts a character to lowercase                |
+| [ft_toupper](https://github.com/oliverkingz/Libft_OZ/blob/main/src/to/ft_toupper.c) | Converts a character to uppercase                |
+| **Extra**                      | **Description**                                   |
+| [ft_atol](https://github.com/oliverkingz/Libft_OZ/blob/main/src/to/ft_atol.c) | Converts a string to a long integer              |
 
 ### **String Functions**
 - Core functions for handling strings: copying, joining, trimming, and splitting (`ft_strlen`, `ft_strjoin`, `ft_split`).
