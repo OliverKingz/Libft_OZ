@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 17:17:19 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/27 17:44:19 by ozamora-         ###   ########.fr       */
+/*   Updated: 2024/12/03 16:52:06 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
  */
 int	ft_issigned_nbr(const char *str)
 {
+	if (str == NULL)
+		return (0);
 	if (*str == '+' || *str == '-')
 		str++;
 	if (*str == '\0')
