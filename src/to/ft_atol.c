@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 18:47:08 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/27 19:31:20 by ozamora-         ###   ########.fr       */
+/*   Updated: 2024/11/29 16:54:37 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@
  */
 long	ft_atol(const char *nptr)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	long	res;
 
 	i = 0;
