@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:28:46 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/27 19:31:44 by ozamora-         ###   ########.fr       */
+/*   Updated: 2024/12/03 19:22:45 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <stdarg.h> // To use va_list, va_start, va_copy, va_arg and va_end
 # include <stdio.h>  // To use printf for testing
 
+# include <stddef.h> // To use NULL and size_t definitions
 # include <stdint.h> // To use definitions, to check size_t overflows
 # include <limits.h> // To use definitions, to check int overflows
 
