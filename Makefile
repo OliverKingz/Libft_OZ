@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2024/11/27 19:29:20 by ozamora-         ###   ########.fr        #
+#    Updated: 2024/12/05 15:51:40 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,7 +104,7 @@ $(NAME): $(OBJS)
 # Rule to compile object files from source files
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@$(MKDIR) $(dir $@)
-	@$(PRINTF) "$(BOLD_BLUE)\t[ozamora-'s Libft]: $(DEF_COLOR)$<\r"
+	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)\t[ozamora-'s Libft]: $(DEF_COLOR)$<\r"
 	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 # Rule to clean generated files
