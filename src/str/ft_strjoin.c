@@ -6,24 +6,22 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 14:54:05 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/22 15:23:20 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:23:52 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * ft_strjoin - Allocates (with malloc) and returns a new string,
- *              which is the result of the concatenation of 's1' and 's2'.
- *
- * @s1: The first string. If NULL, treated as an empty string.
- * @s2: The string to add to 's1'. If NULL, treated as an empty string.
- *
- * Return: The newly allocated string resulting from the concatenation
- *         of 's1' and 's2'. Returns NULL if the memory allocation fails.
- *
- * Note: Uses malloc, so the caller is responsible for freeing the memory
- * allocated for the resulting string when it is no longer needed.
+ * @brief Allocates and returns a new string
+ * which is the result of the concatenation of 's1' and 's2'.
+ * @param s1 The first string. If NULL, it is treated as an empty string.
+ * @param s2 The second string to append to 's1'. If NULL, it is treated as an 
+ * empty string.
+ * @return A pointer to the newly allocated concatenated string, or NULL if 
+ * memory allocation fails.
+ * @note The function uses malloc, so the caller is responsible for freeing the 
+ * returned string when it is no longer needed.
  */
 char	*ft_strjoin(char const *s1, char const *s2)
 {

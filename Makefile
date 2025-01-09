@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2024/12/28 16:54:18 by ozamora-         ###   ########.fr        #
+#    Updated: 2025/01/09 15:24:13 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ MEM_DIR := mem/
 PUT_DIR := put/
 STR_DIR := str/
 TO_DIR  := to/
+GET_DIR := get/
 
 # **************************************************************************** #
 # FILES
@@ -65,7 +66,7 @@ SRC_FILES += $(addprefix $(MEM_DIR), $(MEM_FILES))
 SRC_FILES += $(addprefix $(PUT_DIR), $(PUT_FILES))
 SRC_FILES += $(addprefix $(STR_DIR), $(STR_FILES))
 SRC_FILES += $(addprefix $(TO_DIR), $(TO_FILES))
-SRC_FILES += $(addprefix $(TO_DIR), $(GET_FILES))
+SRC_FILES += $(addprefix $(GET_DIR), $(GET_FILES))
 
 # INCLUDE FILES
 INC_FILES := libft get_next_line
@@ -130,6 +131,16 @@ norm:
 debug: CFLAGS += -g3 -fsanitize=address
 debug: re
 
+# Rule to show compilation and linking commands
+show:
+	@echo "$(BOLD_BLUE)Compilation command:\t$(DEF_COLOR)" \
+		"$(CC) $(CFLAGS) -I$(INC_DIR) -c" \
+		"$(SRC_DIR)libft.c -o $(OBJ_DIR)libft.o"
+	@echo "$(BOLD_BLUE)Linking command:\t$(DEF_COLOR)" \
+		"$(CC) $(CFLAGS) libft.o -o $(NAME)"
+	@echo "$(BOLD_BLUE)Cleaning command:\t$(DEF_COLOR)" \
+		"$(RM) $(OBJ_DIR) $(NAME)"
+
 # Rule to show all variables being used
 info:
 	@echo "$(BOLD_BLUE)NAME: $(DEF_COLOR)$(NAME)"
@@ -138,7 +149,6 @@ info:
 	@echo "$(BOLD_BLUE)SRC_DIR: $(DEF_COLOR)$(SRC_DIR)"
 	@echo "$(BOLD_BLUE)INC_DIR: $(DEF_COLOR)$(INC_DIR)"
 	@echo "$(BOLD_BLUE)OBJ_DIR: $(DEF_COLOR)$(OBJ_DIR)"
-	@echo "$(BOLD_BLUE)LIB_DIR: $(DEF_COLOR)$(LIB_DIR)"
 	@echo "$(BOLD_BLUE)SRC_FILES: $(DEF_COLOR)$(SRC_FILES)"
 	@echo "$(BOLD_BLUE)INC_FILES: $(DEF_COLOR)$(INC_FILES)"
 	@echo "$(BOLD_BLUE)SRCS: $(DEF_COLOR)$(SRCS)"

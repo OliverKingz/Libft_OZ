@@ -6,25 +6,25 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:47:21 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/22 15:24:08 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/01/09 15:21:09 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * ft_substr - Creates a substring from a string.
- * 
- * @s: The string to create a substring from.
- * @start: The index of the character in 's' to start from.
- * @len: The maximum length of the substring.
- * 
- * Return: The resulting substring, or NULL if memory allocation fails.
- * 
- * Notes:
+ * @brief Creates a substring from a string.
+ * @param s The string to create a substring from.
+ * @param start The index of the character in 's' to start from.
+ * @param len The maximum length of the substring.
+ * @return A pointer to the resulting substring, or NULL if memory allocation
+ * fails.
+ * @note 
  * - If 'start' is beyond the length of 's', an empty string is returned.
- * - The function adjusts 'len' to ensure it does not exceed the length of 's' 
+ * 
+ * - The function adjusts 'len' to ensure it does not exceed the length of 's'
  *   starting from 'start'.
+ * 
  * - Handles NULL input by returning NULL.
  */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
