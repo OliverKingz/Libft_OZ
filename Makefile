@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2025/01/09 15:24:13 by ozamora-         ###   ########.fr        #
+#    Updated: 2025/01/09 16:11:02 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,7 +116,6 @@ clean:
 fclean:
 	@make clean > /dev/null
 	@$(RM) $(NAME)
-	@$(RM) $(LIB_DIR)
 	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t" \
 		"$(DEF_COLOR)$(BOLD_RED)FULLY CLEANED$(DEF_COLOR)\n"
 
