@@ -6,11 +6,11 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 16:14:30 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/01/10 17:41:33 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/01/10 20:22:42 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static char	*read_and_store(int fd, char *store, char *buffer)
 {
