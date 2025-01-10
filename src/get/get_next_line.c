@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/28 16:14:30 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/01/09 16:09:57 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/01/10 17:41:33 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static char	*read_and_store(int fd, char *store, char *buffer)
 /**
  * @brief Extracts a line from the line buffer up to the first newline character.
  * @param line_buffer The buffer containing the line to extract.
- * @return A pointer to the newly allocated string containing the extracted line, 
+ * @return A pointer to the newly allocated string containing the extracted line
  * or NULL if no newline character is found or if memory allocation fails.
  * @note 
  * - The function modifies the original buffer by terminating it at the newline
