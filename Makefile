@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2025/01/10 20:14:27 by ozamora-         ###   ########.fr        #
+#    Updated: 2025/01/17 16:05:23 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,6 @@ NAME := libft.a
 CC		:= cc
 CFLAGS	:= -Wall -Wextra -Werror
 CFLAGS	+= -MMD -MP
-
-AR		:= ar rcs
-MKDIR	:= mkdir -p
-RM		:= rm -rf
-CP		:= cp
-PRINTF	:= printf "%b"
 
 # **************************************************************************** #
 # DIRECTORIES
@@ -80,9 +74,10 @@ INCS	:= $(addprefix $(INC_DIR), $(addsuffix .h, $(INC_FILES)))
 # **************************************************************************** #
 # COLOURS
 
-BOLD_RED   = \033[1;31m
-BOLD_GREEN = \033[1;32m
-BOLD_BLUE  = \033[1;34m
+BOLD_RED	= \033[1;31m
+BOLD_GREEN	= \033[1;32m
+BOLD_YELLOW	= \033[1;33m
+BOLD_BLUE	= \033[1;34m
 
 DEF_COLOR  = \033[0;39m
 CLEAR_LINE = \033[2K
@@ -96,27 +91,27 @@ all: $(NAME)
 
 # Rule to create the static library
 $(NAME): $(OBJS)
-	@$(AR) $(NAME) $(OBJS)
-	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t" \
+	@ar rcs $(NAME) $(OBJS)
+	@printf "%b" "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t" \
 		"$(DEF_COLOR)$(BOLD_GREEN)CREATED$(DEF_COLOR)\n"
 
 # Rule to compile object files from source files
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
-	@$(MKDIR) $(dir $@)
-	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t$(DEF_COLOR)$<\r"
+	@mkdir -p $(dir $@)
+	@printf "%b" "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t$(DEF_COLOR)$<\r"
 	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 # Rule to clean generated files
 clean:
-	@$(RM) $(OBJ_DIR)
-	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t" \
+	@rm -rf $(OBJ_DIR)
+	@printf "%b" "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t" \
 		"$(DEF_COLOR)$(BOLD_RED)OBJECTS CLEANED$(DEF_COLOR)\n"
 
 # Rule to clean generated files and the executablle
 fclean:
-	@make clean > /dev/null
-	@$(RM) $(NAME)
-	@$(PRINTF) "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t" \
+	@$(MAKE) clean > /dev/null
+	@rm -rf $(NAME)
+	@printf "%b" "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t" \
 		"$(DEF_COLOR)$(BOLD_RED)FULLY CLEANED$(DEF_COLOR)\n"
 
 # Rule to recompile from zero. 
@@ -126,10 +121,6 @@ re: fclean all
 norm:
 	@norminette $(SRCS) $(INCS)
 
-# Rule to compile object files from source files with debug flags
-debug: CFLAGS += -g3 -fsanitize=address
-debug: re
-
 # Rule to show compilation and linking commands
 show:
 	@echo "$(BOLD_BLUE)Compilation command:\t$(DEF_COLOR)" \
@@ -138,7 +129,7 @@ show:
 	@echo "$(BOLD_BLUE)Linking command:\t$(DEF_COLOR)" \
 		"$(CC) $(CFLAGS) libft.o -o $(NAME)"
 	@echo "$(BOLD_BLUE)Cleaning command:\t$(DEF_COLOR)" \
-		"$(RM) $(OBJ_DIR) $(NAME)"
+		"rm -rf $(OBJ_DIR) $(NAME)"
 
 # Rule to show all variables being used
 info:
@@ -154,12 +145,18 @@ info:
 	@echo "$(BOLD_BLUE)OBJS: $(DEF_COLOR)$(OBJS)"
 	@echo "$(BOLD_BLUE)DEPS: $(DEF_COLOR)$(DEPS)"
 	@echo "$(BOLD_BLUE)INCS: $(DEF_COLOR)$(INCS)"
-	@echo "$(BOLD_BLUE)MKDIR: $(DEF_COLOR)$(MKDIR)"
-	@echo "$(BOLD_BLUE)RM: $(DEF_COLOR)$(RM)"
-	@echo "$(BOLD_BLUE)PRINTF: $(DEF_COLOR)$(PRINTF)"
-	@echo "$(BOLD_BLUE)CP: $(DEF_COLOR)$(CP)"
+
+# Rule to compile object files from source files with debug flags
+debug: CFLAGS += -g3 -fsanitize=address
+debug: clean all
+	@echo "\t\t\t$(BOLD_YELLOW)[DEBUG MODE]$(DEF_COLOR)"
+
+# Rule to compile with debug flags and execute valgrind
+valgrind: CFLAGS += -g3
+valgrind: clean all
+	@valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
 
 # Phony targets
-.PHONY: all clean fclean re norm debug info
+.PHONY: all clean fclean re norm show info debug valgrind
 
 # **************************************************************************** #
