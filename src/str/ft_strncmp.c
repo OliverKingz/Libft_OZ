@@ -6,13 +6,13 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:38:21 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/01/18 18:44:45 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/01/18 18:46:43 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strrncmp_aux(const char *s1, const char *s2, size_t n)
+static int	ft_strncmp_aux(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
