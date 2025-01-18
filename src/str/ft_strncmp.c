@@ -6,12 +6,30 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:38:21 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/01/18 17:05:40 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/01/18 18:42:13 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_strrncmp_aux(const char *s1, const char *s2, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n && s1[i] != '\0' && s2[i] != '\0')
+	{
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	if (i < n)
+	{
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	}
+	return (0);
+}
 /**
  * @brief Compares two strings up to a specified number of characters.
  * @param s1 The first string.
@@ -25,24 +43,31 @@
  * - A positive value if 's1' is greater than 's2'.
  * @note The comparison stops at the first differing character, at a null byte, 
  * or after 'n' characters have been compared.
+ * 
+ * - Handles NULL pointers, n overflow, and non-ASCII characters
  */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t	len1;
+	size_t	len2;
 
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0' && i < n)
+	if (s1 == NULL || s2 == NULL)
 	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-		i++;
+		if (s1 == NULL && s2 == NULL)
+			return (0);
+		if (s1 == NULL)
+			return -(unsigned char)s2[0];
+		return (unsigned char)s1[0];
 	}
-	if (i < n)
-	{
-		if ((unsigned char)s1[i] != (unsigned char)s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-	}
-	return (0);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	if (n == 0)
+		return (0);
+	if (n > len1)
+		n = len1;
+	if (n > len2)
+		n = len2;
+	return ft_strncmp_aux(s1, s2, n);
 }
 
 /*
