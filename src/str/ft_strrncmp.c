@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/18 16:54:45 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/01/18 17:09:19 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/01/18 17:16:20 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	ft_strrncmp(const char *s1, const char *s2, size_t n)
 	size_t	len2;
 	size_t	i;
 
-	len1 = strlen(s1);
-	len2 = strlen(s2);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
 	if (n == 0)
 		return (0);
 	i = 0;
