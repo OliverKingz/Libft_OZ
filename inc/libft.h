@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:28:46 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/01/10 20:13:36 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/01/18 17:10:10 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,8 @@ long	ft_atol(const char *nptr);
  * - ft_split: Splits a string by a delimiter into an array.
  * - ft_strmapi: Applies a function to each character of a string.
  * - ft_striteri: Iterates a string and applies a function to each character.
+ * Added later:
+ * - ft_strrncmp: Compares up to n-chars of two strings, starting from the back
  */
 
 size_t	ft_strlen(const char *s);
@@ -120,6 +122,8 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+int		ft_strrncmp(const char *s1, const char *s2, size_t n);
 
 /*
  * Memory Management Functions:

@@ -6,25 +6,25 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:38:21 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/22 15:23:38 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/01/18 17:05:40 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * ft_strncmp - Compares two strings up to a specified number of characters.
+ * @brief Compares two strings up to a specified number of characters.
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @param n The maximum number of characters to compare.
+ * @return 
+ * - A negative value if 's1' is less than 's2'.
  * 
- * @s1: The first string.
- * @s2: The second string.
- * @n: The maximum number of characters to compare.
+ * - Zero if 's1' is equal to 's2'.
  * 
- * Return: Integer less than, equal to, or greater than zero if 
- *         's1' is found, respectively, to be less than, to match, 
- *         or be greater than 's2'.
- * 
- * Edge cases checked:
- * - Stops comparing at 0 or when reaching the limit 'n'.
+ * - A positive value if 's1' is greater than 's2'.
+ * @note The comparison stops at the first differing character, at a null byte, 
+ * or after 'n' characters have been compared.
  */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

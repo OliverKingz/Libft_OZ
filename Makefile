@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2025/01/17 16:05:23 by ozamora-         ###   ########.fr        #
+#    Updated: 2025/01/18 17:07:16 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,8 @@ PUT_FILES :=	ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 				ft_putnbr ft_putnbr_base ft_putnbr_unsigned
 STR_FILES :=	ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr \
 				ft_strncmp ft_strnstr ft_strdup ft_substr ft_strjoin \
-				ft_strtrim ft_split ft_strmapi ft_striteri
+				ft_strtrim ft_split ft_strmapi ft_striteri \
+				ft_strrncmp
 TO_FILES  :=	ft_toupper ft_tolower ft_itoa ft_atoi \
 				ft_atol
 GET_FILES :=	get_next_line

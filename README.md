@@ -65,9 +65,11 @@ This repository contains my personal version of `Libft`, originally based on the
 | [ft_strlcat](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strlcat.c) | Safely concatenates strings                      |
 | [ft_strlcpy](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strlcpy.c) | Safely copies strings                            |
 | [ft_strmapi](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strmapi.c) | Iterates over a string and applies a function    |
-| [ft_strncmp](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strncmp.c) | Compares two strings                             |
+| [ft_strncmp](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strncmp.c) | Compares up to 'n' characters of two strings     |
 | [ft_strtrim](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strtrim.c) | Trims whitespace from a string                   |
 | [ft_substr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_substr.c) | Extracts a substring                             |
+| **Extra**                      | **Description**                                   |
+| [ft_strrncmp](https://github.com/oliverkingz/Libft_OZ/blob/main/src/to/ft_strrncmp.c) | Compares up to 'n' chars of 2 strings from the end|
 
 ### **Memory Functions**
 - Robust tools for memory allocation and manipulation: `ft_calloc`, `ft_memset`, `ft_memmove`.
