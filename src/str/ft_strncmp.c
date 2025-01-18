@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:38:21 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/01/18 18:42:13 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/01/18 18:44:45 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static int	ft_strrncmp_aux(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
+
 /**
  * @brief Compares two strings up to a specified number of characters.
  * @param s1 The first string.
@@ -56,8 +57,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		if (s1 == NULL && s2 == NULL)
 			return (0);
 		if (s1 == NULL)
-			return -(unsigned char)s2[0];
-		return (unsigned char)s1[0];
+			return (-(unsigned char)s2[0]);
+		return ((unsigned char)s1[0]);
 	}
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
@@ -67,7 +68,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		n = len1;
 	if (n > len2)
 		n = len2;
-	return ft_strncmp_aux(s1, s2, n);
+	return (ft_strncmp_aux(s1, s2, n));
 }
 
 /*
