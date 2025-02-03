@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:28:46 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/02/03 17:25:00 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/02/03 17:56:32 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,7 @@ long	ft_atol(const char *nptr);
  * Added later:
  * - ft_strcmp: Compares two strings.
  * - ft_strrncmp: Compares up to n-chars of two strings, starting from the back
+ * - ft_strjoin_char: Joins two strings with a char in the middle
  */
 
 size_t	ft_strlen(const char *s);
@@ -113,7 +114,6 @@ char	*ft_strrchr(const char *s, int c);
 
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
@@ -123,6 +123,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strrncmp(const char *s1, const char *s2, size_t n);
+
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin_char(char const *s1, char const *s2, char c);
 
 /*
  * Memory Management Functions:
