@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:28:46 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/01/18 17:10:10 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/02/03 17:56:32 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ long	ft_atol(const char *nptr);
  * - ft_strlcat: Appends one string to another with size limit.
  * - ft_strchr: Finds the first occurrence of a character in a string.
  * - ft_strrchr: Finds the last occurrence of a character in a string.
- * - ft_strcmp: Compares two strings.
  * - ft_strncmp: Compares up to 'n' characters of two strings.
  * - ft_strnstr: Locates a substring within a string.
  * - ft_substr: Creates a substring from a string.
@@ -101,7 +100,9 @@ long	ft_atol(const char *nptr);
  * - ft_strmapi: Applies a function to each character of a string.
  * - ft_striteri: Iterates a string and applies a function to each character.
  * Added later:
+ * - ft_strcmp: Compares two strings.
  * - ft_strrncmp: Compares up to n-chars of two strings, starting from the back
+ * - ft_strjoin_char: Joins two strings with a char in the middle
  */
 
 size_t	ft_strlen(const char *s);
@@ -111,19 +112,20 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 
-int		ft_strcmp(const char *s1, const char *s2);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(const char *s);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
+int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_strrncmp(const char *s1, const char *s2, size_t n);
+
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin_char(char const *s1, char const *s2, char c);
 
 /*
  * Memory Management Functions:

@@ -69,7 +69,9 @@ This repository contains my personal version of `Libft`, originally based on the
 | [ft_strtrim](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strtrim.c) | Trims whitespace from a string                   |
 | [ft_substr](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_substr.c) | Extracts a substring                             |
 | **Extra**                      | **Description**                                   |
-| [ft_strrncmp](https://github.com/oliverkingz/Libft_OZ/blob/main/src/to/ft_strrncmp.c) | Compares up to 'n' chars of 2 strings from the end|
+| [ft_strrncmp](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strrncmp.c) | Compares up to 'n' chars of 2 strings from the end|
+| [ft_strcmp](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strcmp.c) | Compares two strings char by char|
+| [ft_strjoin_char](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strjoin_char.c) | Joins two strings with a char in the middle |
 
 ### **Memory Functions**
 - Robust tools for memory allocation and manipulation: `ft_calloc`, `ft_memset`, `ft_memmove`.
