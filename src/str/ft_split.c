@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:12:17 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/22 15:22:46 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/02/07 00:38:48 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,11 @@ static int	word_len(char const *s, char c)
 	return (w_len);
 }
 
-static int	free_words(char **split, int i)
+static void	free_words(char **split, int i)
 {
-	if (!split[i])
-	{
-		while (i > 0)
-			free(split[--i]);
-		free(split);
-		return (1);
-	}
-	else
-		return (0);
+	while (i > 0)
+		free(split[--i]);
+	free(split);
 }
 
 static char	**split_aux(char const *s, char c, char **split, int word_counter)
@@ -63,8 +57,8 @@ static char	**split_aux(char const *s, char c, char **split, int word_counter)
 		while (s[start] != '\0' && s[start] == c)
 			start++;
 		split[i] = ft_substr(s, start, word_len(s + start, c));
-		if (free_words(split, i))
-			return (NULL);
+		if (!split[i])
+			return (free_words(split, i), NULL);
 		while (s[start] != '\0' && s[start] != c)
 			start++;
 		i++;
@@ -74,21 +68,23 @@ static char	**split_aux(char const *s, char c, char **split, int word_counter)
 }
 
 /**
- * ft_split - Splits a string into an array of substrings using a delimiter.
- * 
- * @s:   The string to be split.
- * @c:   The delimiter character.
- * 
- * Return: A pointer to an array of strings (substrings created from 's'). 
+ * @brief Splits a string into an array of substrings using a delimiter.
+ * @param s:   The string to be split.
+ * @param c:   The delimiter character.
+ * @return A pointer to an array of strings (substrings created from 's'). 
  *         Each element in the array represents a substring found between 
  *         occurrences of 'c'. 
  *         The array is NULL-terminated.
  *         Returns NULL if the memory allocation fails or if 's' is NULL.
- * 
- * Notes:
+ * @note
  * - Consecutive delimiters are treated as a single delimiter.
+ * 
  * - Leading and trailing delimiters are ignored, meaning they do not contribute 
  * to the creation of empty strings.
+ * 
+ * - The function handles empty strings and strings with only delimiters by 
+ * returning an array with a single NULL element.
+ * 
  * - The caller is responsible for freeing the memory allocated for the array and
  * its substrings.
  */
