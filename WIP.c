@@ -1,0 +1,171 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WIP.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/07 22:16:53 by ozamora-          #+#    #+#             */
+/*   Updated: 2025/02/07 22:19:53 by ozamora-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+// Functions I still need to add to my lib
+
+char				**my_arg_to_strarray(int argc, char **argv);
+int					*my_strarray_to_intarray(char **str);
+long				*my_strarray_to_longarray(char **str);
+
+void				my_qsort_intarray(int *arr, size_t size);
+
+int					my_sqrt(int n);
+
+void				my_err(const char *msg);
+
+int					my_strarray_len(char **strarray);
+int					my_str_num_len(char *str_num);
+
+char	**my_arg_to_strarray(int argc, char **argv)
+{
+	char	**str_array;
+	char	*str;
+	char	*aux;
+	int		i;
+
+	if (argc < 2)
+		return (NULL);
+	str = ft_strdup("");
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (++i < argc)
+	{
+		if (argv[i][0] == '\0')
+			return (free(str), NULL);
+		aux = str;
+		str = ft_strjoin_char(aux, argv[i], ' ');
+		if (!str)
+			return (free(aux), aux = NULL, NULL);
+		free(aux);
+	}
+	str_array = ft_split(str, ' ');
+	if (!str_array)
+		return (free(str), str = NULL, NULL);
+	return (free(str), str_array);
+}
+
+int	*my_strarray_to_intarray(char **str)
+{
+	int		num_strs;
+	int		i;
+	int		*int_array;
+	long	value;
+
+	if (str == NULL || *str == NULL)
+		return (NULL);
+	num_strs = 0;
+	while (str[num_strs] != NULL)
+		num_strs++;
+	int_array = (int *)ft_calloc(num_strs, sizeof(int));
+	if (!int_array)
+		return (NULL);
+	i = 0;
+	while (i < num_strs)
+	{
+		value = ft_atol(str[i]);
+		if (value > INT_MAX || value < INT_MIN || my_str_num_len(str[i]) > 10)
+			return (free(int_array), NULL);
+		int_array[i] = (int)value;
+		i++;
+	}
+	return (int_array);
+}
+
+long	*my_strarray_to_longarray(char **str)
+{
+	int		num_strs;
+	int		i;
+	long	*long_array;
+
+	if (str == NULL || *str == NULL)
+		return (NULL);
+	num_strs = 0;
+	while (str[num_strs] != NULL)
+		num_strs++;
+	long_array = (long *)ft_calloc(num_strs, sizeof(long));
+	if (!long_array)
+		return (NULL);
+	i = 0;
+	while (i < num_strs)
+	{
+		if (my_str_num_len(str[i]) > 19)
+			return (free(long_array), NULL);
+		long_array[i] = ft_atol(str[i]);
+		i++;
+	}
+	return (long_array);
+}
+
+int	my_sqrt(int n)
+{
+	int	i;
+	int	result;
+
+	i = 1;
+	result = 1;
+	while (result <= n)
+	{
+		i++;
+		result = i * i;
+	}
+	return (i - 1);
+}
+
+void	my_err(const char *msg)
+{
+	ft_putstr_fd("Error\n", 2);
+	msg = NULL;
+	if (msg)
+	{
+		ft_putstr_fd((char *)msg, 2);
+		ft_putstr_fd("\n", 2);
+	}
+	exit(EXIT_FAILURE);
+}
+
+int	my_strarray_len(char **strarray)
+{
+	int	size;
+
+	size = 0;
+	while (strarray[size] != NULL)
+	{
+		size++;
+	}
+	return (size);
+}
+
+int	my_str_num_len(char *str_num)
+{
+	int	len;
+	int	i;
+
+	len = 0;
+	i = 0;
+	if (str_num[i] == '-' || str_num[i] == '+')
+	{
+		i++;
+	}
+	while (str_num[i] == '0')
+	{
+		i++;
+	}
+	while (str_num[i] >= '0' && str_num[i] <= '9')
+	{
+		len++;
+		i++;
+	}
+	return (len);
+}
