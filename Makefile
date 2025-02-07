@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2025/02/07 11:49:19 by ozamora-         ###   ########.fr        #
+#    Updated: 2025/02/07 12:33:30 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,24 +105,24 @@ all: $(NAME)
 # Rule to create the static library
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@printf "%b" "$(CL) -> $(BB)[Libft]:\t$(BG)Compilation success\t✅$(NC)\n"
+	@printf "%b" "$(CL) -> $(BB)[Libft]:\t\t$(BG)Compilation success\t✅$(NC)\n"
 
 # Rule to compile object files from source files
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(dir $@)
-	@printf "%b" "$(CL) -> $(BB)[Libft]:\t$(NC)$<\r"
+	@printf "%b" "$(CL) -> $(BB)[Libft]:\t\t$(NC)$<\r"
 	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 # Rule to clean generated files
 clean:
 	@rm -rf $(OBJ_DIR)
-	@printf "%b" "$(CL) -> $(BB)[Libft]:\t$(BG)Object files cleaned\t❎$(NC)\n"
+	@printf "%b" "$(CL) -> $(BB)[Libft]:\t\t$(BG)Object files cleaned\t❎$(NC)\n"
 
 # Rule to clean generated files and the executablle
 fclean:
 	@$(MAKE) clean > /dev/null
 	@rm -rf $(NAME)
-	@printf "%b" "$(CL) -> $(BB)[Libft]:\t$(BG)Executable cleaned\t❎$(NC)\n"
+	@printf "%b" "$(CL) -> $(BB)[Libft]:\t\t$(BG)Executable cleaned\t❎$(NC)\n"
 
 # Rule to recompile from zero. 
 re: fclean all
@@ -138,13 +138,13 @@ norm:
 debug:
 	@$(MAKE) -s clean
 	@$(MAKE) -s DEBUG=1
-	@echo " -> $(BB)[Debug]:\t$(BG)Debug mode enabled\t🟦$(NC)"
+	@echo " -> $(BB)[Debug]:\t\t$(BG)Debug mode enabled\t🟦$(NC)"
 
 # Rule to compile with valgrind debug flags
 valgrind:
 	@$(MAKE) -s clean
 	@$(MAKE) -s VALGRIND=1
-	@echo " -> $(BB)[Valgrind]:\t$(BG)Valgrind mode enabled\t🟦$(NC)"
+	@echo " -> $(BB)[Valgrind]:\t\t$(BG)Valgrind mode enabled\t🟦$(NC)"
 
 # **************************************************************************** #
 # PERSONAL RULES
