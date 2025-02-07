@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2025/02/03 17:56:33 by ozamora-         ###   ########.fr        #
+#    Updated: 2025/02/07 11:49:19 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,17 @@ NAME := libft.a
 CC		:= cc
 CFLAGS	:= -Wall -Wextra -Werror
 CFLAGS	+= -MMD -MP
+
+# DEBUG MODE
+ifeq ($(DEBUG),1)
+	CFLAGS += -g3 -fsanitize=address
+	LDFLAGS += -fsanitize=address
+endif
+
+# VALGRIND MODE
+ifeq ($(VALGRIND),1)
+	CFLAGS += -g3
+endif
 
 # **************************************************************************** #
 # DIRECTORIES
@@ -75,15 +86,15 @@ DEPS	:= $(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_FILES)))
 INCS	:= $(addprefix $(INC_DIR), $(addsuffix .h, $(INC_FILES)))
 
 # **************************************************************************** #
-# COLOURS
+# COLOURS: BOLD RGBY
+BR	= \033[1;31m
+BG	= \033[1;32m
+BB	= \033[1;34m
+BY	= \033[1;33m
 
-BOLD_RED	= \033[1;31m
-BOLD_GREEN	= \033[1;32m
-BOLD_YELLOW	= \033[1;33m
-BOLD_BLUE	= \033[1;34m
-
-DEF_COLOR	= \033[0;39m
-CLEAR_LINE	= \033[2K
+# NO COLOR and CLEAR LINE
+NC	= \033[0;39m
+CL	= \033[2K
 
 # **************************************************************************** #
 # ESSENTIAL RULES
@@ -94,76 +105,78 @@ all: $(NAME)
 # Rule to create the static library
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@printf "%b" "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t" \
-		"$(DEF_COLOR)$(BOLD_GREEN)CREATED$(DEF_COLOR)\n"
+	@printf "%b" "$(CL) -> $(BB)[Libft]:\t$(BG)Compilation success\t✅$(NC)\n"
 
 # Rule to compile object files from source files
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(dir $@)
-	@printf "%b" "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t$(DEF_COLOR)$<\r"
+	@printf "%b" "$(CL) -> $(BB)[Libft]:\t$(NC)$<\r"
 	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 # Rule to clean generated files
 clean:
 	@rm -rf $(OBJ_DIR)
-	@printf "%b" "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t" \
-		"$(DEF_COLOR)$(BOLD_RED)OBJECTS CLEANED$(DEF_COLOR)\n"
+	@printf "%b" "$(CL) -> $(BB)[Libft]:\t$(BG)Object files cleaned\t❎$(NC)\n"
 
 # Rule to clean generated files and the executablle
 fclean:
 	@$(MAKE) clean > /dev/null
 	@rm -rf $(NAME)
-	@printf "%b" "$(CLEAR_LINE)$(BOLD_BLUE)[ozamora-'s Libft]:\t" \
-		"$(DEF_COLOR)$(BOLD_RED)FULLY CLEANED$(DEF_COLOR)\n"
+	@printf "%b" "$(CL) -> $(BB)[Libft]:\t$(BG)Executable cleaned\t❎$(NC)\n"
 
 # Rule to recompile from zero. 
 re: fclean all
 
 # **************************************************************************** #
-# PERSONAL RULES
+# NORM AND DEBUG RULES
 
 # Rule to check if the files pass norminette
 norm:
 	@norminette $(SRCS) $(INCS)
 
+# Rule to compile object files from source files with debug flags
+debug:
+	@$(MAKE) -s clean
+	@$(MAKE) -s DEBUG=1
+	@echo " -> $(BB)[Debug]:\t$(BG)Debug mode enabled\t🟦$(NC)"
+
+# Rule to compile with valgrind debug flags
+valgrind:
+	@$(MAKE) -s clean
+	@$(MAKE) -s VALGRIND=1
+	@echo " -> $(BB)[Valgrind]:\t$(BG)Valgrind mode enabled\t🟦$(NC)"
+
+# **************************************************************************** #
+# PERSONAL RULES
+
 # Rule to show compilation and linking commands
 show:
-	@echo "$(BOLD_BLUE)Compilation command:\t$(DEF_COLOR)" \
+	@echo "$(BB)Compilation command:\t$(NC)" \
 		"$(CC) $(CFLAGS) -I$(INC_DIR) -c" \
 		"$(SRC_DIR)libft.c -o $(OBJ_DIR)libft.o"
-	@echo "$(BOLD_BLUE)Linking command:\t$(DEF_COLOR)" \
+	@echo "$(BB)Linking command:\t$(NC)" \
 		"$(CC) $(CFLAGS) libft.o -o $(NAME)"
-	@echo "$(BOLD_BLUE)Cleaning command:\t$(DEF_COLOR)" \
+	@echo "$(BB)Cleaning command:\t$(NC)" \
 		"rm -rf $(OBJ_DIR) $(NAME)"
 
 # Rule to show all variables being used
 info:
-	@echo "$(BOLD_YELLOW)\nozamora's Libft:$(DEF_COLOR)"
-	@echo "$(BOLD_BLUE)NAME: $(DEF_COLOR)$(NAME)"
-	@echo "$(BOLD_YELLOW)\nCompiler:$(DEF_COLOR)"
-	@echo "$(BOLD_BLUE)CC: $(DEF_COLOR)$(CC)"
-	@echo "$(BOLD_BLUE)CFLAGS: $(DEF_COLOR)$(CFLAGS)"
-	@echo "$(BOLD_YELLOW)\nDirectories:$(DEF_COLOR)"
-	@echo "$(BOLD_BLUE)SRC_DIR: $(DEF_COLOR)$(SRC_DIR)"
-	@echo "$(BOLD_BLUE)INC_DIR: $(DEF_COLOR)$(INC_DIR)"
-	@echo "$(BOLD_BLUE)OBJ_DIR: $(DEF_COLOR)$(OBJ_DIR)"
-	@echo "$(BOLD_YELLOW)\nFiles:$(DEF_COLOR)"
-	@echo "$(BOLD_BLUE)SRC_FILES: $(DEF_COLOR)$(SRC_FILES)"
-	@echo "$(BOLD_BLUE)INC_FILES: $(DEF_COLOR)$(INC_FILES)"
-	@echo "$(BOLD_BLUE)SRCS: $(DEF_COLOR)$(SRCS)"
-	@echo "$(BOLD_BLUE)OBJS: $(DEF_COLOR)$(OBJS)"
-	@echo "$(BOLD_BLUE)DEPS: $(DEF_COLOR)$(DEPS)"
-	@echo "$(BOLD_BLUE)INCS: $(DEF_COLOR)$(INCS)"
-
-# Rule to compile object files from source files with debug flags
-debug: CFLAGS += -g3 -fsanitize=address
-debug: clean all
-	@echo "\t\t\t$(BOLD_YELLOW)[DEBUG MODE]$(DEF_COLOR)"
-
-# Rule to compile with valgrind debug flags
-valgrind: CFLAGS += -g3
-valgrind: clean all
-	@echo "\t\t\t$(BOLD_YELLOW)[VALGRIND MODE]$(DEF_COLOR)"
+	@echo "$(BY)\nozamora's Libft:$(NC)"
+	@echo "$(BB)NAME: $(NC)$(NAME)"
+	@echo "$(BY)\nCompiler:$(NC)"
+	@echo "$(BB)CC: $(NC)$(CC)"
+	@echo "$(BB)CFLAGS: $(NC)$(CFLAGS)"
+	@echo "$(BY)\nDirectories:$(NC)"
+	@echo "$(BB)SRC_DIR: $(NC)$(SRC_DIR)"
+	@echo "$(BB)INC_DIR: $(NC)$(INC_DIR)"
+	@echo "$(BB)OBJ_DIR: $(NC)$(OBJ_DIR)"
+	@echo "$(BY)\nFiles:$(NC)"
+	@echo "$(BB)SRC_FILES: $(NC)$(SRC_FILES)"
+	@echo "$(BB)INC_FILES: $(NC)$(INC_FILES)"
+	@echo "$(BB)SRCS: $(NC)$(SRCS)"
+	@echo "$(BB)OBJS: $(NC)$(OBJS)"
+	@echo "$(BB)DEPS: $(NC)$(DEPS)"
+	@echo "$(BB)INCS: $(NC)$(INCS)"
 
 -include $(DEPS)
 .PHONY: all clean fclean re norm show info debug valgrind
