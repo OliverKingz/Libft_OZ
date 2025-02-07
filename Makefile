@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2025/02/07 21:50:25 by ozamora-         ###   ########.fr        #
+#    Updated: 2025/02/07 22:00:01 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -123,7 +123,7 @@ clean:
 fclean:
 	@$(MAKE) clean > /dev/null
 	@rm -rf $(NAME)
-	@printf "%b" "$(CL) -> $(BW)[Libft]:\t\t$(BG)Executable cleaned\t❎$(NC)\n"
+	@printf "%b" "$(CL) -> $(BW)[Libft]:\t\t$(BG)Exe and objects cleaned\t❎$(NC)\n"
 
 # Rule to recompile from zero. 
 re: fclean all
