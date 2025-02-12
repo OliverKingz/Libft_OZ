@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 15:28:46 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/02/03 17:56:32 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/02/12 21:07:43 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <stddef.h> // To use NULL and size_t definitions
 # include <stdint.h> // To use definitions, to check size_t overflows
 # include <limits.h> // To use definitions, to check int overflows
+# include <stdbool.h>// To use definitions
 
 # include "get_next_line.h"
 
