@@ -72,6 +72,7 @@ This repository contains my personal version of `Libft`, originally based on the
 | [ft_strrncmp](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strrncmp.c) | Compares up to 'n' chars of 2 strings from the end|
 | [ft_strcmp](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strcmp.c) | Compares two strings char by char|
 | [ft_strjoin_char](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strjoin_char.c) | Joins two strings with a char in the middle |
+| [ft_strtok](https://github.com/oliverkingz/Libft_OZ/blob/main/src/str/ft_strtok.c) | Splits a string into tokens based on delimiters |
 
 ### **Memory Functions**
 - Robust tools for memory allocation and manipulation: `ft_calloc`, `ft_memset`, `ft_memmove`.
