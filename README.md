@@ -137,7 +137,7 @@ This repository contains my personal version of `Libft`, originally based on the
 - Additional output functions from a custom printf implementation: `ft_printf`, `ft_putptr`, `ft_putnbr_base`.
 
 | Function          | Description                                              |
-| ----------------- | --------------------------------------------------- -----|
+| ----------------- | ---------------------------------------------------------|
 | [ft_putchar_fd]   | Writes a character to a file descriptor                  |
 | [ft_putendl_fd]   | Writes a line to a file descriptor                       |
 | [ft_putnbr_fd]    | Writes a number to a file descriptor                     |
