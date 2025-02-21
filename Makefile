@@ -6,7 +6,7 @@
 #    By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 16:53:17 by ozamora-          #+#    #+#              #
-#    Updated: 2025/02/07 12:33:30 by ozamora-         ###   ########.fr        #
+#    Updated: 2025/02/12 21:38:50 by ozamora-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,7 @@ PUT_FILES	:=	ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd \
 STR_FILES	:=	ft_strlen ft_strlcpy ft_strlcat ft_strchr ft_strrchr \
 				ft_strncmp ft_strnstr ft_strdup ft_substr ft_strjoin \
 				ft_strtrim ft_split ft_strmapi ft_striteri \
-				ft_strrncmp ft_strcmp ft_strjoin_char
+				ft_strrncmp ft_strcmp ft_strjoin_char ft_strtok
 TO_FILES	:=	ft_toupper ft_tolower ft_itoa ft_atoi \
 				ft_atol
 GET_FILES	:=	get_next_line
@@ -91,6 +91,7 @@ BR	= \033[1;31m
 BG	= \033[1;32m
 BB	= \033[1;34m
 BY	= \033[1;33m
+BW	= \033[1;37m
 
 # NO COLOR and CLEAR LINE
 NC	= \033[0;39m
@@ -105,24 +106,24 @@ all: $(NAME)
 # Rule to create the static library
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
-	@printf "%b" "$(CL) -> $(BB)[Libft]:\t\t$(BG)Compilation success\t✅$(NC)\n"
+	@printf "%b" "$(CL) -> $(BW)[Libft]:\t\t$(BG)Compilation success\t✅$(NC)\n"
 
 # Rule to compile object files from source files
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(dir $@)
-	@printf "%b" "$(CL) -> $(BB)[Libft]:\t\t$(NC)$<\r"
+	@printf "%b" "$(CL) -> $(BW)[Libft]:\t\t$(NC)$<\r"
 	@$(CC) $(CFLAGS) -I$(INC_DIR) -c $< -o $@
 
 # Rule to clean generated files
 clean:
 	@rm -rf $(OBJ_DIR)
-	@printf "%b" "$(CL) -> $(BB)[Libft]:\t\t$(BG)Object files cleaned\t❎$(NC)\n"
+	@printf "%b" "$(CL) -> $(BW)[Libft]:\t\t$(BG)Object files cleaned\t❎$(NC)\n"
 
 # Rule to clean generated files and the executablle
 fclean:
 	@$(MAKE) clean > /dev/null
 	@rm -rf $(NAME)
-	@printf "%b" "$(CL) -> $(BB)[Libft]:\t\t$(BG)Executable cleaned\t❎$(NC)\n"
+	@printf "%b" "$(CL) -> $(BW)[Libft]:\t\t$(BG)Exe and objects cleaned\t❎$(NC)\n"
 
 # Rule to recompile from zero. 
 re: fclean all
@@ -138,13 +139,13 @@ norm:
 debug:
 	@$(MAKE) -s clean
 	@$(MAKE) -s DEBUG=1
-	@echo " -> $(BB)[Debug]:\t\t$(BG)Debug mode enabled\t🟦$(NC)"
+	@echo " -> $(BW)[Debug]:\t\t$(BB)Debug mode enabled\t🟦$(NC)"
 
 # Rule to compile with valgrind debug flags
 valgrind:
 	@$(MAKE) -s clean
 	@$(MAKE) -s VALGRIND=1
-	@echo " -> $(BB)[Valgrind]:\t\t$(BG)Valgrind mode enabled\t🟦$(NC)"
+	@echo " -> $(BW)[Valgrind]:\t\t$(BB)Valgrind mode enabled\t🟦$(NC)"
 
 # **************************************************************************** #
 # PERSONAL RULES
