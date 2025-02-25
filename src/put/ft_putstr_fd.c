@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:12:12 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/24 21:06:25 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:55:55 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,8 @@
  */
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
 
 	if (fd < 0 || s == NULL)
 		return ;
-	i = 0;
-	while (s[i] != '\0')
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	write(fd, s, ft_strlen(s));
 }

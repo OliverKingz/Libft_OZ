@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:39:05 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/24 17:41:28 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:57:32 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ size_t	ft_putstr(char *str)
 	}
 	while (str[str_len] != '\0')
 		str_len += ft_putchar(str[str_len]);
-	return (str_len);
+	write(STDOUT_FILENO, str, ft_strlen(str));
+	return (ft_strlen(str));
 }
