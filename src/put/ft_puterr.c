@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_puterr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 17:12:03 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/03/07 14:23:12 by ozamora-         ###   ########.fr       */
+/*   Created: 2025/03/07 14:23:25 by ozamora-          #+#    #+#             */
+/*   Updated: 2025/03/07 14:28:32 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief  Sends a string to the specified file descriptor, followed by a newline.
- * @param s:  The string to send.
- * @param fd: The file descriptor on which to write.
+ * @brief Sends a string to the standard error output (stderr).
+ * @param s: The string to send.
  * @return Nothing.
  * @note 
- * - The function ensures that a newline character is written to 'fd' after 
- * writing the string 's', effectively appending a newline to the output.
- * 
+ * - The function writes the string 's' to the standard error file descriptor
+
  * - If the input string 's' is NULL, the function does nothing.
  */
-void	ft_putendl_fd(char *s, int fd)
+void	ft_puterr(char *s)
 {
-	if (fd < 0 || s == NULL)
+	if (s == NULL)
 		return ;
-	write(fd, s, ft_strlen(s));
-	write(fd, "\n", 1);
+	write(STDERR_FILENO, s, ft_strlen(s));
 }

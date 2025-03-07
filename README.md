@@ -142,7 +142,7 @@ This repository contains my personal version of `Libft`, originally based on the
 | [ft_putendl_fd]   | Writes a line to a file descriptor                       |
 | [ft_putnbr_fd]    | Writes a number to a file descriptor                     |
 | [ft_putstr_fd]    | Writes a string to a file descriptor                     |
-| **Extra**         | **Description**                                          |
+| **Printf**         | **Description**                                          |
 | [ft_printf]       | Prints a formatted message                               |
 | [ft_putchar]      | Writes a character to the standard output                |
 | [ft_putptr]       | Writes a pointer address to a file descriptor            |
@@ -150,6 +150,8 @@ This repository contains my personal version of `Libft`, originally based on the
 | [ft_putnbr]       | Writes a number to the standard output                   |
 | [ft_putnbr_unsigned] | Writes an unsigned number to the standard output      |
 | [ft_putnbr_base]  | Writes a number in a specified base to a file descriptor |
+| **Extra**         | **Description**                                          |
+| [ft_puterr]       | Writes a string to stderr fd                             |
 
 [ft_putchar_fd]: https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putchar_fd.c
 [ft_putendl_fd]: https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putendl_fd.c
@@ -162,6 +164,7 @@ This repository contains my personal version of `Libft`, originally based on the
 [ft_putnbr]: https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putnbr.c
 [ft_putnbr_unsigned]: https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putnbr_unsigned.c
 [ft_putnbr_base]: https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_putnbr_base.c
+[ft_puterr]: https://github.com/oliverkingz/Libft_OZ/blob/main/src/put/ft_puterr.c
 
 ### **Linked List Operations**
 - Manage linked lists easily with node creation, addition, iteration, and mapping (`ft_lstnew`, `ft_lstadd_back`, `ft_lstmap`).
