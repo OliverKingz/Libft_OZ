@@ -6,14 +6,14 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 17:12:03 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/03/07 14:23:12 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:25:38 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /**
- * @brief  Sends a string to the specified file descriptor, followed by a newline.
+ * @brief Sends a string to the specified file descriptor, followed by a newline
  * @param s:  The string to send.
  * @param fd: The file descriptor on which to write.
  * @return Nothing.
