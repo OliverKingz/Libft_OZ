@@ -6,7 +6,7 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 19:02:15 by ozamora-          #+#    #+#             */
-/*   Updated: 2024/11/24 20:55:56 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/03/12 14:39:42 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,40 @@
  * @param size: Size of each element.
  * @return Pointer to the allocated memory, or NULL if allocation fails.
  * @note
- * - Checks for multiplication overflow to prevent undefined behavior.
+ * - Replica of the original calloc, along errors, for consistency during
+ * NULL_CHECKS.
  */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*array;
-	size_t	total_size;
+	void	*ptr;
 
-	if (nmemb == 0 || size == 0)
+	ptr = malloc(nmemb * size);
+	if (!ptr)
 		return (NULL);
-	total_size = nmemb * size;
-	if (size != 0 && total_size / size != nmemb)
-		return (NULL);
-	array = malloc(total_size);
-	if (!array)
-		return (NULL);
-	ft_bzero(array, total_size);
-	return (array);
+	ft_memset(ptr, 0, nmemb * size);
+	return (ptr);
 }
+
+// int	main()
+// {
+// 	char	*ft;
+// 	char	*og;
+// 	char	*au;
+
+// 	ft = ft_calloc(0, sizeof(char *));
+// 	og = calloc(0, sizeof(char *));
+// 	au = malloc(0);
+// 	printf("ft: %p\t%s\t%lu\n", ft, ft, sizeof(ft));
+// 	printf("og: %p\t%s\t%lu\n", og, og, sizeof(og));
+// 	printf("au: %p\t%s\t%lu\n", au, au, sizeof(au));
+// 	if (!og)
+// 		perror("og"), exit(EXIT_FAILURE);
+// 	if (!ft)
+// 		perror("ft"), exit(EXIT_FAILURE);
+// 	if (!au)
+// 		perror("au"), exit(EXIT_FAILURE);
+// 	free(og);
+// 	free(ft);
+// 	free(au);
+// 	return 0;
+// }
