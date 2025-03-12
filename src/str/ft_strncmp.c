@@ -6,18 +6,41 @@
 /*   By: ozamora- <ozamora-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/20 16:38:21 by ozamora-          #+#    #+#             */
-/*   Updated: 2025/01/18 18:46:43 by ozamora-         ###   ########.fr       */
+/*   Updated: 2025/03/12 15:24:46 by ozamora-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_strncmp_aux(const char *s1, const char *s2, size_t n)
+/**
+ * @brief Compares two strings up to a specified number of characters.
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @param n The maximum number of characters to compare.
+ * @return 
+ * - A negative value if 's1' is less than 's2'.
+ * 
+ * - Zero if 's1' is equal to 's2'.
+ * 
+ * - A positive value if 's1' is greater than 's2'.
+ * @note 
+ * - The comparison stops at the first differing character, at a null byte, 
+ * or after 'n' characters have been compared.
+ * 
+ * - This version is more robust in handling edge cases where one string ends 
+ * before the other. 
+ * 
+ * - It explicitly checks for null characters and performs a final comparison 
+ * if needed.
+ */
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
+	if (n == 0)
+		return (0);
 	i = 0;
-	while (i < n && s1[i] != '\0' && s2[i] != '\0')
+	while (i < n && s1[i] && s2[i])
 	{
 		if ((unsigned char)s1[i] != (unsigned char)s2[i])
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
@@ -31,45 +54,18 @@ static int	ft_strncmp_aux(const char *s1, const char *s2, size_t n)
 	return (0);
 }
 
-/**
- * @brief Compares two strings up to a specified number of characters.
- * @param s1 The first string.
- * @param s2 The second string.
- * @param n The maximum number of characters to compare.
- * @return 
- * - A negative value if 's1' is less than 's2'.
- * 
- * - Zero if 's1' is equal to 's2'.
- * 
- * - A positive value if 's1' is greater than 's2'.
- * @note The comparison stops at the first differing character, at a null byte, 
- * or after 'n' characters have been compared.
- * 
- * - Handles NULL pointers, n overflow, and non-ASCII characters
- */
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	len1;
-	size_t	len2;
+// Simpler and more concise but may not handle all edge cases as explicit as V1
+// int	ft_strncmp(const char *s1, const char *s2, size_t n)
+// {
+// 	size_t	i;
 
-	if (s1 == NULL || s2 == NULL)
-	{
-		if (s1 == NULL && s2 == NULL)
-			return (0);
-		if (s1 == NULL)
-			return (-(unsigned char)s2[0]);
-		return ((unsigned char)s1[0]);
-	}
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	if (n == 0)
-		return (0);
-	if (n > len1)
-		n = len1;
-	if (n > len2)
-		n = len2;
-	return (ft_strncmp_aux(s1, s2, n));
-}
+// 	if (n == 0)
+// 		return (0);
+// 	i = 0;
+// 	while (s1[i] == s2[i] && i + 1 < n && s1[i] && s2[i])
+// 		i++;
+// 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+// }
 
 /*
 #include <stdio.h>
